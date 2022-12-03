@@ -1,7 +1,7 @@
 package io.github.zrdzn.aoc;
 
 import io.github.zrdzn.aoc.day.Day;
-import io.github.zrdzn.aoc.day.days.Day1;
+import io.github.zrdzn.aoc.day.days.Day2;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -12,7 +12,7 @@ import java.util.List;
 public class AdventOfCode {
 
     public static void main(String[] args) {
-        Day day = new Day1();
+        Day day = new Day2();
         try {
             day.run(getInput(day.getInputPath()));
         } catch (URISyntaxException exception) {
