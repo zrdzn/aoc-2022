@@ -1,7 +1,7 @@
 package io.github.zrdzn.aoc;
 
 import io.github.zrdzn.aoc.day.Day;
-import io.github.zrdzn.aoc.day.days.Day4;
+import io.github.zrdzn.aoc.day.days.Day6;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -12,7 +12,7 @@ import java.util.List;
 public class AdventOfCode {
 
     public static void main(String[] args) {
-        Day day = new Day4();
+        Day day = new Day6();
         try {
             day.run(getInput(day.getInputPath()));
         } catch (URISyntaxException exception) {
@@ -66,6 +66,18 @@ public class AdventOfCode {
         }
 
         return false;
+    }
+
+    public static int getCharacterRepetitions(String target) {
+        int amount = 0;
+        for (int letterIndex = 0; letterIndex < target.length() - 1; letterIndex++) {
+            for (int nextLetterIndex = letterIndex + 1; nextLetterIndex < target.length(); nextLetterIndex++) {
+                if (target.charAt(letterIndex) == target.charAt(nextLetterIndex)) {
+                    amount++;
+                }
+            }
+        }
+        return amount;
     }
 
 }
