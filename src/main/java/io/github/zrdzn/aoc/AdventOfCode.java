@@ -1,7 +1,7 @@
 package io.github.zrdzn.aoc;
 
 import io.github.zrdzn.aoc.day.Day;
-import io.github.zrdzn.aoc.day.days.Day6;
+import io.github.zrdzn.aoc.day.days.Day7;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -12,7 +12,7 @@ import java.util.List;
 public class AdventOfCode {
 
     public static void main(String[] args) {
-        Day day = new Day6();
+        Day day = new Day7();
         try {
             day.run(getInput(day.getInputPath()));
         } catch (URISyntaxException exception) {
@@ -28,6 +28,15 @@ public class AdventOfCode {
         }
 
         throw new IllegalArgumentException("Input for that day does not exist or something went wrong.");
+    }
+
+    public static boolean isNumber(String numberRaw) {
+        try {
+            Integer.parseInt(numberRaw);
+            return true;
+        } catch (NumberFormatException exception) {
+            return false;
+        }
     }
 
     public static int getNumber(String numberRaw) {
